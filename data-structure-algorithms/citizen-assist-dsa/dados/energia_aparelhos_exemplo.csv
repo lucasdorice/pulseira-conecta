@@ -1,0 +1,10 @@
+id,nome,potencia_w,horas_dia,hora_inicio,origem,situacao
+1,Chuveiro elétrico,5500,0.6,6,VALOR ILUSTRATIVO: conferir no rótulo ou na tabela do Procel/INMETRO,exemplo
+2,Geladeira (potência média ao longo do dia),100,24,0,VALOR ILUSTRATIVO: conferir no rótulo ou na tabela do Procel/INMETRO,exemplo
+3,Televisão,100,5,19,VALOR ILUSTRATIVO: conferir no rótulo ou na tabela do Procel/INMETRO,exemplo
+4,Lâmpadas de LED (conjunto da casa),45,5,18,VALOR ILUSTRATIVO: conferir no rótulo ou na tabela do Procel/INMETRO,exemplo
+5,Ferro de passar roupa,1000,1,14,VALOR ILUSTRATIVO: conferir no rótulo ou na tabela do Procel/INMETRO,exemplo
+6,Máquina de lavar roupa,500,1,10,VALOR ILUSTRATIVO: conferir no rótulo ou na tabela do Procel/INMETRO,exemplo
+7,Ventilador,80,6,13,VALOR ILUSTRATIVO: conferir no rótulo ou na tabela do Procel/INMETRO,exemplo
+8,Micro-ondas,1200,0.3,12,VALOR ILUSTRATIVO: conferir no rótulo ou na tabela do Procel/INMETRO,exemplo
+9,Computador ou notebook,80,4,20,VALOR ILUSTRATIVO: conferir no rótulo ou na tabela do Procel/INMETRO,exemplo

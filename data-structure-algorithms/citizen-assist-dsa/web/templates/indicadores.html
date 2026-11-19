@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block titulo %}Indicadores{% endblock %}
+{% block conteudo %}
+<h1>Indicadores</h1>
+<h2>Uso do catálogo nesta sessão</h2>
+<dl class="ficha">
+  <dt>Buscas feitas</dt><dd>{{ resumo.buscas }}</dd>
+  <dt>Buscas com resultado</dt><dd>{{ resumo.com_resultado }} ({{ resumo.taxa_resultado }}%)</dd>
+  <dt>Tempo médio de busca no servidor</dt><dd>{{ resumo.tempo_medio_ms }} ms</dd>
+  <dt>Serviços para verificar</dt><dd>{{ desatualizados }} (mais de 180 dias ou sem data)</dd>
+</dl>
+<p class="nota">O tempo medido é apenas o da busca no servidor. Os termos buscados não são guardados.</p>
+
+<h2>Serviços por categoria</h2>
+<table>
+  <caption class="so-leitor">Quantidade de serviços por categoria</caption>
+  <thead><tr><th scope="col">Categoria</th><th scope="col">Quantidade</th></tr></thead>
+  <tbody>{% for nome, qtd in categorias.items() %}<tr><td>{{ nome }}</td><td>{{ qtd }}</td></tr>{% endfor %}</tbody>
+</table>
+
+<h2>Comparar algoritmos de ordenação</h2>
+<p>Gera uma lista fictícia e mede o tempo do merge sort e do insertion sort sobre ela.</p>
+<form class="ordem" method="post" action="{{ url_for('indicadores_pagina') }}">
+  <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+  <div>
+    <label for="n">Tamanho da lista</label>
+    <select id="n" name="n">{% for t in tamanhos %}<option value="{{ t }}">{{ t }} serviços</option>{% endfor %}</select>
+  </div>
+  <button type="submit">Rodar comparação</button>
+</form>
+{% if linhas %}
+<table>
+  <caption class="so-leitor">Resultado da comparação</caption>
+  <thead><tr><th scope="col">n</th><th scope="col">Merge sort (ms)</th><th scope="col">Insertion sort (ms)</th></tr></thead>
+  <tbody>{% for l in linhas %}<tr><td>{{ l.n }}</td><td>{{ l.merge_ms }}</td><td>{{ l.insertion_ms }}</td></tr>{% endfor %}</tbody>
+</table>
+{% endif %}
+{% endblock %}

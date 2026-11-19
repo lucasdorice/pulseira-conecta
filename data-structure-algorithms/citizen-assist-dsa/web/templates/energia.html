@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block titulo %}Energia{% endblock %}
+{% block conteudo %}
+<h1>Energia: matriz, consumo e demanda</h1>
+<p class="intro">Veja de onde vem a energia elétrica, descubra quais aparelhos pesam mais na sua conta e em que horário o consumo se concentra. Os resultados são <strong>estimativas</strong>, não garantia de consumo nem de economia. Nada do que você digitar é guardado.</p>
+
+<h2 id="matriz">1. Matriz energética</h2>
+{% if fontes_exemplo %}<p class="mensagem alerta" role="note"><strong>Dado de exemplo:</strong> os percentuais abaixo são ilustrativos e precisam ser substituídos pelos dados oficiais (Balanço Energético Nacional, da EPE).</p>{% endif %}
+{% if fontes.esta_vazia() %}
+  <p>Nenhuma fonte de energia carregada.</p>
+{% else %}
+<table>
+  <caption class="so-leitor">Participação de cada fonte, da maior para a menor</caption>
+  <thead><tr><th scope="col">Fonte</th><th scope="col">Tipo</th><th scope="col">Participação</th></tr></thead>
+  <tbody>
+  {% for f in fontes.percorrer() %}
+    <tr><td>{{ f.nome }}</td><td>{{ 'Renovável' if f.tipo == 'renovavel' else 'Não renovável' }}</td><td>{{ '%.1f'|format(f.participacao) }}%</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+<p><strong>Total de fontes renováveis: {{ '%.1f'|format(renovaveis) }}%</strong></p>
+{% endif %}
+
+<h2 id="aparelhos">2. Meus aparelhos</h2>
+<p>Marque os aparelhos da sua casa. Os valores já preenchidos são sugestões de exemplo: confira a potência no rótulo do aparelho e ajuste as horas de uso.</p>
+{% if erros %}
+  <div class="mensagem erro" role="alert">
+    <p>Corrija antes de calcular:</p>
+    <ul>{% for chave, msg in erros.items() %}<li>{{ msg }}</li>{% endfor %}</ul>
+  </div>
+{% endif %}
+<form method="post" action="{{ url_for('energia') }}#resultado" novalidate>
+  <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+  <div class="rolagem">
+  <table class="aparelhos">
+    <caption class="so-leitor">Aparelhos, potência, horas de uso por dia e hora em que ligam</caption>
+    <thead><tr><th scope="col">Usa?</th><th scope="col">Aparelho</th><th scope="col">Potência (W)</th><th scope="col">Horas por dia</th><th scope="col">Liga às (0 a 23)</th></tr></thead>
+    <tbody>
+    {% for a in catalogo.percorrer() %}
+      {% set v = valores[a.id] %}
+      <tr>
+        <td><input type="checkbox" id="usar_{{ a.id }}" name="usar_{{ a.id }}" value="1" {% if v.usar %}checked{% endif %} aria-label="Usar {{ a.nome }}"></td>
+        <th scope="row"><label for="usar_{{ a.id }}">{{ a.nome }}</label></th>
+        <td><input type="text" inputmode="decimal" name="pot_{{ a.id }}" value="{{ v.pot }}" aria-label="Potência em watts de {{ a.nome }}"{% if a.id in erros %} aria-invalid="true"{% endif %}></td>
+        <td><input type="text" inputmode="decimal" name="horas_{{ a.id }}" value="{{ v.horas }}" aria-label="Horas de uso por dia de {{ a.nome }}"{% if a.id in erros %} aria-invalid="true"{% endif %}></td>
+        <td><input type="text" inputmode="numeric" name="ini_{{ a.id }}" value="{{ v.ini }}" aria-label="Hora em que {{ a.nome }} liga"{% if a.id in erros %} aria-invalid="true"{% endif %}></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  <div class="campo campo-curto">
+    <label for="tarifa">Tarifa da sua conta, em reais por kWh (opcional)</label>
+    <input id="tarifa" name="tarifa" type="text" inputmode="decimal" value="{{ tarifa }}"{% if 'tarifa' in erros %} aria-invalid="true"{% endif %}>
+  </div>
+  <p class="acoes"><button type="submit">Calcular consumo e demanda</button></p>
+</form>
+
+{% if resultado %}
+<section id="resultado" aria-labelledby="titulo-resultado">
+  <h2 id="titulo-resultado">Resultado (estimativa)</h2>
+  <dl class="ficha">
+    <dt>Consumo estimado</dt><dd>{{ '%.1f'|format(resultado.total) }} kWh por mês</dd>
+    {% if resultado.custo is not none %}<dt>Custo estimado</dt><dd>{{ '%.2f'|format(resultado.custo) }} reais por mês, sem impostos nem adicional de bandeira</dd>{% endif %}
+    <dt>Pico de demanda</dt><dd>{{ '%.2f'|format(resultado.pico) }} kW às {{ '%02d'|format(resultado.hora_pico) }}h</dd>
+    <dt>Fator de carga</dt><dd>{{ '%.2f'|format(resultado.fator) }} (1 significa consumo constante; perto de 0, consumo concentrado em poucas horas)</dd>
+  </dl>
+
+  <h3>Quem mais consome</h3>
+  <ol class="ranking">
+    {% for a in resultado.ranking.percorrer() %}
+      <li><strong>{{ a.nome }}</strong>: {{ '%.1f'|format(a.consumo_mensal_kwh()) }} kWh por mês ({{ '%.0f'|format(a.consumo_mensal_kwh() / resultado.total * 100) }}%)</li>
+    {% endfor %}
+  </ol>
+
+  <h3>Demanda ao longo do dia</h3>
+  <svg class="grafico" viewBox="0 0 500 200" role="img" aria-labelledby="gt gd">
+    <title id="gt">Demanda em kW por hora do dia</title>
+    <desc id="gd">O pico é de {{ '%.2f'|format(resultado.pico) }} kW às {{ '%02d'|format(resultado.hora_pico) }}h.</desc>
+    <line class="eixo" x1="32" y1="160" x2="496" y2="160"/>
+    {% for b in resultado.barras %}
+      <rect class="{{ 'barra barra-pico' if b.pico else 'barra' }}" x="{{ b.x }}" y="{{ b.y }}" width="{{ b.largura }}" height="{{ b.altura }}"/>
+      {% if b.pico %}<text class="rotulo" x="{{ b.x + 7 }}" y="{{ b.y - 4 }}" text-anchor="middle">pico</text>{% endif %}
+      {% if b.hora % 3 == 0 %}<text class="rotulo" x="{{ b.x + 7 }}" y="178" text-anchor="middle">{{ '%02d'|format(b.hora) }}h</text>{% endif %}
+    {% endfor %}
+    <text class="rotulo" x="4" y="20">kW</text>
+  </svg>
+  <p class="nota">A barra preta, com a palavra "pico", marca o horário de maior demanda.</p>
+  <details>
+    <summary>Ver os valores em tabela</summary>
+    <table>
+      <caption class="so-leitor">Demanda média por hora</caption>
+      <thead><tr><th scope="col">Hora</th><th scope="col">Demanda (kW)</th></tr></thead>
+      <tbody>{% for b in resultado.barras %}<tr><td>{{ '%02d'|format(b.hora) }}h</td><td>{{ '%.2f'|format(b.kw) }}{% if b.pico %} (pico){% endif %}</td></tr>{% endfor %}</tbody>
+    </table>
+  </details>
+  {% if resultado.exemplo %}<p class="mensagem alerta" role="note"><strong>Atenção:</strong> as potências sugeridas são dados de exemplo. Confira no rótulo do aparelho ou nas tabelas do Procel e do INMETRO.</p>{% endif %}
+  <p class="nota">Estimativa com os dados informados. Consumo e economia reais dependem do uso, do estado dos aparelhos e da tarifa. Não é canal oficial.</p>
+</section>
+{% endif %}
+
+<h2 id="orientacoes">3. Orientações de energia</h2>
+{% if orientacoes.esta_vazia() %}
+  <p>Nenhuma orientação de energia cadastrada.</p>
+{% else %}
+  <ul class="lista">
+    {% for s in orientacoes.percorrer() %}{% include "_servico_linha.html" %}{% endfor %}
+  </ul>
+{% endif %}
+{% endblock %}

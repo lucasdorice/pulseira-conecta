@@ -1,0 +1,9 @@
+id,nome,tipo,participacao,origem,ano,situacao
+1,Hidrelétrica,renovavel,55,VALOR ILUSTRATIVO: substituir pelo Balanço Energético Nacional (EPE),,exemplo
+2,Eólica,renovavel,14,VALOR ILUSTRATIVO: substituir pelo Balanço Energético Nacional (EPE),,exemplo
+3,Solar,renovavel,8,VALOR ILUSTRATIVO: substituir pelo Balanço Energético Nacional (EPE),,exemplo
+4,Biomassa,renovavel,7,VALOR ILUSTRATIVO: substituir pelo Balanço Energético Nacional (EPE),,exemplo
+5,Gás natural,nao_renovavel,10,VALOR ILUSTRATIVO: substituir pelo Balanço Energético Nacional (EPE),,exemplo
+6,Nuclear,nao_renovavel,2,VALOR ILUSTRATIVO: substituir pelo Balanço Energético Nacional (EPE),,exemplo
+7,Carvão mineral,nao_renovavel,2,VALOR ILUSTRATIVO: substituir pelo Balanço Energético Nacional (EPE),,exemplo
+8,Derivados de petróleo,nao_renovavel,2,VALOR ILUSTRATIVO: substituir pelo Balanço Energético Nacional (EPE),,exemplo

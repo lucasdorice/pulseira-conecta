@@ -1,0 +1,5 @@
+<li class="linha">
+  <a class="linha-titulo" href="{{ url_for('detalhe', id_=s.id) }}">{{ s.titulo }}</a>
+  <span class="linha-meta">{{ s.categoria }} · {{ s.abrangencia }} · ID {{ s.id }}</span>
+  {% if s.status_verificacao() != 'ok' %}<span class="selo selo-alerta">Verificar atualização</span>{% endif %}
+</li>

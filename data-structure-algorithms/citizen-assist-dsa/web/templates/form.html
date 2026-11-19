@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block titulo %}{{ titulo }}{% endblock %}
+{% block conteudo %}
+<h1>{{ titulo }}</h1>
+{% if erros %}
+  <div class="mensagem erro" role="alert" tabindex="-1">
+    <p>Corrija {{ erros|length }} campo(s) antes de salvar:</p>
+    <ul>{% for nome, msg in erros.items() %}<li><a href="#{{ nome }}">{{ msg }}</a></li>{% endfor %}</ul>
+  </div>
+{% endif %}
+<form class="formulario" method="post" novalidate>
+  <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+  {% for nome, rotulo, obrigatorio, limite in campos %}
+    {% if not (nome == 'id' and editando) %}
+    <div class="campo">
+      <label for="{{ nome }}">{{ rotulo }}{% if obrigatorio %} (obrigatório){% endif %}</label>
+      {% if nome == 'descricao' %}
+        <textarea id="{{ nome }}" name="{{ nome }}" rows="4" maxlength="{{ limite }}"{% if nome in erros %} aria-invalid="true" aria-describedby="erro-{{ nome }}"{% endif %}>{{ valores.get(nome, '') }}</textarea>
+      {% else %}
+        <input id="{{ nome }}" name="{{ nome }}" type="text" maxlength="{{ limite }}" value="{{ valores.get(nome, '') }}"{% if nome in erros %} aria-invalid="true" aria-describedby="erro-{{ nome }}"{% endif %}>
+      {% endif %}
+      {% if nome in erros %}<p class="erro-campo" id="erro-{{ nome }}">{{ erros[nome] }}</p>{% endif %}
+    </div>
+    {% endif %}
+  {% endfor %}
+  <p class="acoes">
+    <button type="submit">Salvar serviço</button>
+    <a class="botao-sec" href="{{ url_for('servicos') }}">Cancelar</a>
+  </p>
+</form>
+{% endblock %}

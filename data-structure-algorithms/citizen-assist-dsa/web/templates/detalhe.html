@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block titulo %}{{ s.titulo }}{% endblock %}
+{% block conteudo %}
+<p><a href="{{ url_for('servicos') }}">Voltar para todos os serviços</a></p>
+<h1>{{ s.titulo }}</h1>
+{% set status = s.status_verificacao() %}
+{% if status == 'desatualizado' %}
+  <p class="mensagem alerta" role="note"><strong>Atenção:</strong> esta informação foi verificada pela última vez em {{ s.ultima_verificacao }} ({{ s.dias_desde_verificacao() }} dias atrás) e pode estar desatualizada.</p>
+{% elif status == 'sem_data' %}
+  <p class="mensagem alerta" role="note"><strong>Atenção:</strong> não há data de verificação para este serviço. Confirme no órgão responsável.</p>
+{% endif %}
+<dl class="ficha">
+  <dt>Descrição</dt><dd>{{ s.descricao }}</dd>
+  <dt>Para quem</dt><dd>{{ s.publico_alvo }}</dd>
+  <dt>Onde ou como</dt><dd>{{ s.canal_local }}</dd>
+  <dt>Categoria</dt><dd>{{ s.categoria }}</dd>
+  <dt>Abrangência</dt><dd>{{ s.abrangencia }}</dd>
+  <dt>Referência</dt><dd>{{ s.referencia or 'Não informada' }}</dd>
+  <dt>Limitação</dt><dd>{{ s.aviso or 'Nenhuma informada' }}</dd>
+  <dt>Última verificação</dt><dd>{{ s.ultima_verificacao or 'Sem data' }}</dd>
+  <dt>ID</dt><dd>{{ s.id }}</dd>
+</dl>
+{% if admin %}
+<p class="acoes">
+  <a class="botao" href="{{ url_for('editar', id_=s.id) }}">Atualizar serviço</a>
+  <a class="botao perigo" href="{{ url_for('excluir', id_=s.id) }}">Excluir serviço</a>
+</p>
+{% endif %}
+{% endblock %}

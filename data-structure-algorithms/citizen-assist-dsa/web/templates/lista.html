@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block titulo %}Todos os serviços{% endblock %}
+{% block conteudo %}
+<h1>Todos os serviços</h1>
+<form class="ordem" method="get" action="{{ url_for('servicos') }}">
+  <div>
+    <label for="ordem">Ordenar por</label>
+    <select id="ordem" name="ordem">
+      <option value="titulo" {% if ordem == 'titulo' %}selected{% endif %}>Título</option>
+      <option value="id" {% if ordem == 'id' %}selected{% endif %}>ID</option>
+    </select>
+  </div>
+  <div>
+    <label for="sentido">Sentido</label>
+    <select id="sentido" name="sentido">
+      <option value="asc" {% if sentido == 'asc' %}selected{% endif %}>Crescente</option>
+      <option value="desc" {% if sentido == 'desc' %}selected{% endif %}>Decrescente</option>
+    </select>
+  </div>
+  <button type="submit">Aplicar ordem</button>
+</form>
+{% if servicos.esta_vazia() %}
+  <p>Nenhum serviço cadastrado ainda.{% if admin %} <a href="{{ url_for('novo') }}">Cadastre o primeiro serviço</a>.{% endif %}</p>
+{% else %}
+  <p>{{ servicos|length }} serviço(s), ordenados por {{ 'título' if ordem == 'titulo' else 'ID' }} ({{ 'crescente' if sentido == 'asc' else 'decrescente' }}).</p>
+  <ul class="lista">
+    {% for s in servicos.percorrer() %}{% include "_servico_linha.html" %}{% endfor %}
+  </ul>
+{% endif %}
+{% endblock %}

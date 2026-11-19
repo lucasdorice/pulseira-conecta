@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titulo %}Citizen Assist AI{% endblock %} · Catálogo de serviços</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=css_versao) }}">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <p class="aviso-topo" role="note"><span>Protótipo educativo com dados fictícios. Não é canal oficial: confirme a informação no órgão responsável.</span></p>
+  <header class="topo">
+    <div class="miolo">
+      <a class="marca" href="{{ url_for('index') }}">Citizen Assist AI <small>Catálogo de serviços</small></a>
+      <nav aria-label="Principal">
+        <a href="{{ url_for('index') }}">Buscar</a>
+        <a href="{{ url_for('servicos') }}">Todos os serviços</a>
+        <a href="{{ url_for('energia') }}">Energia</a>
+        {% if admin %}
+          <a href="{{ url_for('novo') }}">Cadastrar</a>
+          <a href="{{ url_for('indicadores_pagina') }}">Indicadores</a>
+          <form class="inline" method="post" action="{{ url_for('logout') }}">
+            <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+            <button class="link" type="submit">Sair</button>
+          </form>
+        {% else %}
+          <a href="{{ url_for('login') }}">Administrador</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo" class="painel">
+    {% with mensagens = get_flashed_messages(with_categories=true) %}
+      {% for categoria, texto in mensagens %}
+        <p class="mensagem {{ categoria }}" role="{{ 'alert' if categoria == 'erro' else 'status' }}">{{ texto }}</p>
+      {% endfor %}
+    {% endwith %}
+    {% block conteudo %}{% endblock %}
+  </main>
+  <footer class="rodape">
+    <p class="miolo">Projeto acadêmico FIAP · Global Solution 2026.2 · Nenhum dado pessoal é coletado ou guardado.</p>
+  </footer>
+</body>
+</html>
