@@ -143,7 +143,8 @@ Como fazer: peça para cada pessoa abrir `python main.py`, usar a opção 1 (e a
 - O histórico fica em arquivo local, sem criptografia.
 - **Este assistente não é um canal oficial e não substitui a Defesa Civil, os Bombeiros ou o SAMU.** Em perigo imediato, ligue 193, 192 ou 199.
 
-
+## LINK DO VÍDEO
+https://youtu.be/Etg7KC6WNFk
 
 
 
