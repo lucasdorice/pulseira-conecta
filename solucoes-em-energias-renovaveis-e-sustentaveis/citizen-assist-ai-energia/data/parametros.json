@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "descricao": "Parâmetros do módulo de energia. Cada entrada traz valor, unidade, tipo (oficial | estimado | fisico), fonte e observação. 'estimado' = premissa justificada; confira antes de decidir investimento.",
+    "data_consulta": "18/11/2026",
+    "regiao_referencia": "Grande São Paulo (Enel SP)"
+  },
+  "tarifa_kwh": {
+    "valor": 1.00, "unidade": "R$/kWh", "tipo": "estimado",
+    "fonte": "Valor ilustrativo (TE+TUSD com tributos) para residencial B1 da Enel SP. Reajuste ANEEL de ~9% para baixa tensão residencial em 04/07/2026 (aprovado em 30/06/2026).",
+    "observacao": "SUBSTITUA pelo valor da sua conta (R$ total ÷ kWh faturados)."
+  },
+  "bandeira_atual": {
+    "valor": "verde", "unidade": "-", "tipo": "oficial",
+    "fonte": "ANEEL — bandeira verde mantida em novembro/2026 (anúncio de 30/10/2026).",
+    "observacao": "Muda todo mês. Consulte a ANEEL."
+  },
+  "bandeira_verde_100kwh":     {"valor": 0.0,   "unidade": "R$/100 kWh", "tipo": "oficial", "fonte": "ANEEL — bandeiras tarifárias", "observacao": "Sem acréscimo."},
+  "bandeira_amarela_100kwh":   {"valor": 1.885, "unidade": "R$/100 kWh", "tipo": "oficial", "fonte": "ANEEL — bandeiras tarifárias", "observacao": "Antes dos tributos."},
+  "bandeira_vermelha1_100kwh": {"valor": 4.463, "unidade": "R$/100 kWh", "tipo": "oficial", "fonte": "ANEEL — bandeiras tarifárias", "observacao": "Antes dos tributos."},
+  "bandeira_vermelha2_100kwh": {"valor": 7.877, "unidade": "R$/100 kWh", "tipo": "oficial", "fonte": "ANEEL — bandeiras tarifárias", "observacao": "Antes dos tributos."},
+
+  "reajuste_tarifa_anual": {
+    "valor": 0.06, "unidade": "fração/ano", "tipo": "estimado",
+    "fonte": "Premissa de cenário. Referência: reajustes da Enel SP de 13,94% (2025) e cerca de 9% residencial (2026).",
+    "observacao": "Usada só no payback com reajuste. 0,06 é conservador. A tarifa também pode cair."
+  },
+  "horizonte_anos": {"valor": 10, "unidade": "anos", "tipo": "estimado", "fonte": "Período de referência comum para comparar alternativas.", "observacao": "Economia somada sem desconto a valor presente."},
+
+  "co2_rede_tco2_mwh": {
+    "valor": 0.0385, "unidade": "tCO2/MWh", "tipo": "oficial",
+    "fonte": "MCTI — fator médio anual do SIN em 2023 (38,5 kg CO2/MWh).",
+    "observacao": "Em 2025 os fatores mensais ficaram entre 21,5 e 28,9 kg/MWh (jan–abr). Varia por ano e mês."
+  },
+  "co2_ciclo_vida_fv_tco2_mwh": {
+    "valor": 0.041, "unidade": "tCO2/MWh", "tipo": "estimado",
+    "fonte": "IPCC AR5 WGIII, Anexo III — mediana de ciclo de vida de FV de telhado (~41 gCO2e/kWh).",
+    "observacao": "Inclui fabricação e descarte. Comparável ao fator da rede brasileira."
+  },
+
+  "hsp_kwh_m2_dia": {
+    "valor": 4.6, "unidade": "kWh/m²/dia", "tipo": "estimado",
+    "fonte": "Faixa típica de irradiação no plano inclinado na Grande SP.",
+    "observacao": "CONFIRMAR no CRESESB SunData (cresesb.cepel.br) para o CEP da família."
+  },
+  "performance_ratio": {"valor": 0.78, "unidade": "-", "tipo": "estimado", "fonte": "Faixa usual de 0,75 a 0,85 para sistemas residenciais (perdas de temperatura, cabos, inversor, sujeira).", "observacao": "Sombreamento e orientação ruins reduzem."},
+  "degradacao_fv_ano": {"valor": 0.005, "unidade": "fração/ano", "tipo": "estimado", "fonte": "Garantias típicas de módulos fotovoltaicos (~0,5%/ano).", "observacao": ""},
+  "potencia_painel_kwp": {"valor": 0.55, "unidade": "kWp", "tipo": "estimado", "fonte": "Módulo comercial típico de 550 Wp.", "observacao": ""},
+  "area_painel_m2": {"valor": 2.6, "unidade": "m²", "tipo": "estimado", "fonte": "Módulo de 550 Wp (~2,3 m × 1,1 m).", "observacao": "Área de telhado necessária é maior por causa de espaçamentos."},
+  "custo_fv_kwp": {
+    "valor": 4500.0, "unidade": "R$/kWp", "tipo": "estimado",
+    "fonte": "Faixa de mercado residencial instalado (equipamento + instalação + projeto).",
+    "observacao": "COTAR com pelo menos 3 integradores. O preço varia muito."
+  },
+  "custo_disponibilidade_monofasico_kwh": {"valor": 30, "unidade": "kWh/mês", "tipo": "oficial", "fonte": "ANEEL, REN 1.000/2021 — custo de disponibilidade.", "observacao": "Cobrado mesmo com geração própria."},
+  "custo_disponibilidade_bifasico_kwh":   {"valor": 50, "unidade": "kWh/mês", "tipo": "oficial", "fonte": "ANEEL, REN 1.000/2021 — custo de disponibilidade.", "observacao": ""},
+  "custo_disponibilidade_trifasico_kwh":  {"valor": 100, "unidade": "kWh/mês", "tipo": "oficial", "fonte": "ANEEL, REN 1.000/2021 — custo de disponibilidade.", "observacao": ""},
+  "reducao_economia_fio_b": {
+    "valor": 0.15, "unidade": "fração", "tipo": "estimado",
+    "fonte": "Lei 14.300/2022: cobrança escalonada do Fio B sobre a energia compensada para novos sistemas.",
+    "observacao": "Aproximação da perda de economia. Peça o cálculo exato à distribuidora ou ao integrador."
+  },
+  "vida_util_fv_anos": {"valor": 25, "unidade": "anos", "tipo": "estimado", "fonte": "Garantia de desempenho típica de módulos.", "observacao": "Inversor costuma precisar de troca antes (~10–15 anos)."},
+
+  "potencia_chuveiro_w": {"valor": 5500, "unidade": "W", "tipo": "estimado", "fonte": "Chuveiros residenciais costumam ter de 4.500 a 7.500 W na posição inverno.", "observacao": "Confira a etiqueta do seu chuveiro."},
+  "banhos_dia_por_pessoa": {"valor": 1.0, "unidade": "banhos/dia", "tipo": "estimado", "fonte": "Premissa.", "observacao": ""},
+  "fator_sazonal_chuveiro": {"valor": 0.8, "unidade": "-", "tipo": "estimado", "fonte": "Premissa: média anual entre posição inverno (potência cheia) e verão (potência menor ou desligado).", "observacao": "Verifique seu uso real."},
+  "vazao_chuveiro_l_min": {"valor": 4.0, "unidade": "L/min", "tipo": "estimado", "fonte": "Vazão típica de chuveiro elétrico de baixa pressão.", "observacao": "Usada só na verificação física."},
+  "delta_t_banho_c": {"valor": 20.0, "unidade": "°C", "tipo": "estimado", "fonte": "Água fria ~18 °C aquecida a ~38 °C.", "observacao": "Usada só na verificação física."},
+  "calor_especifico_agua_kj_kg_k": {"valor": 4.186, "unidade": "kJ/(kg·K)", "tipo": "fisico", "fonte": "Constante física.", "observacao": ""},
+
+  "fracao_solar_termico": {
+    "valor": 0.70, "unidade": "fração", "tipo": "estimado",
+    "fonte": "Faixa típica de 60% a 80% da energia de aquecimento fornecida pelo sol, com apoio elétrico.",
+    "observacao": "Cai no inverno e em dias nublados. Depende do dimensionamento."
+  },
+  "custo_termico_base": {"valor": 1000.0, "unidade": "R$", "tipo": "estimado", "fonte": "Premissa de mercado (instalação e acessórios).", "observacao": "COTAR."},
+  "custo_termico_por_pessoa": {"valor": 1100.0, "unidade": "R$/pessoa", "tipo": "estimado", "fonte": "Premissa de mercado (coletor + reservatório térmico).", "observacao": "COTAR."},
+  "vida_util_termico_anos": {"valor": 15, "unidade": "anos", "tipo": "estimado", "fonte": "Vida típica de sistema solar térmico.", "observacao": ""},
+
+  "reducao_banho_min": {"valor": 2.0, "unidade": "min", "tipo": "estimado", "fonte": "Meta de hábito para a alternativa A.", "observacao": "Ajustável pelo usuário."},
+  "custo_lampada_led": {"valor": 12.0, "unidade": "R$/un", "tipo": "estimado", "fonte": "Preço de varejo típico de LED de 9 W.", "observacao": ""}
+}

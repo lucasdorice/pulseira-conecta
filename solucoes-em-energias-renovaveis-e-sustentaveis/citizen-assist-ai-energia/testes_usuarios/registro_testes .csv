@@ -1,0 +1,6 @@
+codigo,faixa_etaria,tarefa,conseguiu,nota_clareza,nota_utilidade,comentario,ajuste_feito
+U1,25 a 45 anos,vale a pena energia solar?, Sim,3,9,Explicação clara sobre o uso de energia solar,nenhum
+U2,58 a 72 anos,Quais são as fontes e limitações?,Não,2,5,Explicação não foi muito clara,Mudança na explicação
+U3,15 a 20 anos,Qual o impacto ambiental?,Sim,3,4,Importante saber sobre o impacto ambiental dos gastos energéticos,nenhum
+U4,31 a 40 anos, E se eu tomar banho de 5 minutos?z,Sim,4,5,Informação muito útil,nenhum
+U5,16 a 28,Onde eu gasto mais energia?,Sim,5,5,Informação muito útil no meu dia a dia,nenhum

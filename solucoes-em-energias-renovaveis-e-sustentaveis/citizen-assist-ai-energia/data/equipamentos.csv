@@ -1,0 +1,13 @@
+id,nome,potencia_w,tipo_dado,fonte,observacao
+geladeira,Geladeira (média do ciclo),60,estimado,Ordem de grandeza das tabelas INMETRO/PBE-Procel de geladeiras,Potência média incluindo o liga/desliga do compressor. Confira a etiqueta (kWh/mês).
+ar_condicionado,Ar-condicionado split 9.000-12.000 BTU,900,estimado,Faixa típica de potência elétrica em operação (PBE/Procel),Modelos inverter consomem menos na média.
+ventilador,Ventilador,80,estimado,Faixa típica de ventiladores de mesa/coluna,
+tv_led,TV LED 40-50 pol.,100,estimado,Faixa típica de TVs LED,
+notebook,Notebook,65,estimado,Fonte de alimentação típica de notebooks,
+roteador,Roteador Wi-Fi,10,estimado,Faixa típica de roteadores,Fica ligado 24 h.
+lavadora,Máquina de lavar (média do ciclo),350,estimado,Ordem de grandeza de lavadoras de 10-12 kg,
+ferro,Ferro de passar,1000,estimado,Faixa típica de ferros elétricos,
+microondas,Micro-ondas,1200,estimado,Faixa típica de potência de entrada,
+lampada_incandescente_60w,Lâmpada incandescente 60 W,60,estimado,Potência nominal,
+lampada_fluorescente_15w,Lâmpada fluorescente compacta 15 W,15,estimado,Potência nominal,
+lampada_led_9w,Lâmpada LED 9 W,9,estimado,Potência nominal (equivale a ~60 W incandescente),

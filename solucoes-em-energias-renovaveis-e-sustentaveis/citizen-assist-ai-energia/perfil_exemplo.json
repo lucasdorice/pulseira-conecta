@@ -1,0 +1,14 @@
+{
+  "pessoas": 3,
+  "minutos_banho": 10,
+  "padrao_ligacao": "monofasico",
+  "imovel_proprio": true,
+  "telhado_adequado": null,
+  "tarifa_kwh": 0.95,
+  "itens": [
+    {"id": "geladeira", "qtd": 1, "horas_dia": 24, "dias_mes": 30},
+    {"id": "tv_led", "qtd": 1, "horas_dia": 5, "dias_mes": 30},
+    {"id": "ventilador", "qtd": 1, "horas_dia": 6, "dias_mes": 30},
+    {"id": "lampada_incandescente_60w", "qtd": 6, "horas_dia": 4, "dias_mes": 30}
+  ]
+}
