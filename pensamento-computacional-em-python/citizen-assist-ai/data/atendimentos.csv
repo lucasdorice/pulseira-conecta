@@ -1,0 +1,11 @@
+﻿data,origem,pergunta,id_orientacao,encontrou,confianca,ajudou,tentativas,tempo_segundos,sessao,nota_facilidade
+2026-11-17 21:52:20,pergunta,Como recebo alertas da Defesa Civil por SMS?,4,sim,ALTA,sim,1,97.1,20261117-215020,
+2026-11-17 21:57:07,pergunta,como jogar bola?,,nao,NENHUMA,nao,1,194.6,20261117-215339,
+2026-11-17 21:59:48,categoria,[Saúde] Cuidados com a saúde depois de uma enchente,11,sim,NAVEGAÇÃO,sim,1,4.4,20261117-215729,
+2026-11-17 22:12:41,pergunta,Como faço para sacar o dinheiro do fundo de garantia?,9,sim,MÉDIA,sim,1,313.0,20261117-220712,
+2026-11-17 22:22:40,categoria,[Emergência] O que fazer durante uma enchente ou alagamento,3,sim,NAVEGAÇÃO,nao,1,38.8,20261117-222008,
+2026-11-17 22:23:54,categoria,[Emergência] Chamar a Defesa Civil em uma emergência (199),1,sim,NAVEGAÇÃO,nao,1,19.2,20261117-222008,
+2026-11-17 22:25:50,pergunta,deslizamento],5,sim,MÉDIA,sim,2,101.2,20261117-222008,
+2026-11-17 22:29:54,pergunta,vistoria,6,sim,MÉDIA,sim,1,25.3,20261117-222008,
+2026-11-17 22:52:28,pergunta,enchente,3,sim,MÉDIA,sim,1,1343.9,20261117-222008,
+2026-11-19 00:05:23,pergunta,deslizamento,5,sim,MÉDIA,sim,1,11.4,20261119-000506,
