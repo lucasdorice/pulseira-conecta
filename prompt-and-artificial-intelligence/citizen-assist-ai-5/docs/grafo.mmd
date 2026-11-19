@@ -1,0 +1,27 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	validar(validar)
+	dados_pessoais(dados_pessoais)
+	injecao(injecao)
+	roteador(roteador)
+	gerar(gerar)
+	finalizar(finalizar)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> validar;
+	dados_pessoais --> injecao;
+	gerar --> finalizar;
+	injecao -.-> finalizar;
+	injecao -.-> roteador;
+	roteador -.-> finalizar;
+	roteador -.-> gerar;
+	validar -.-> dados_pessoais;
+	validar -.-> finalizar;
+	finalizar --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

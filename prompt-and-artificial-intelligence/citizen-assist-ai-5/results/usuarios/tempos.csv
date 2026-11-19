@@ -1,0 +1,16 @@
+participante,tarefa,tempo_s,acertou,caminho,ajuda
+P01,T1,126,1,livre,0
+P01,T2,180,0,livre,1
+P01,T3,98,1,menu,0
+P02,T1,134,1,livre,1
+P02,T2,133,1,menu,0
+P02,T3,180,0,livre,1
+P03,T1,180,0,livre,1
+P03,T2,180,0,menu,1
+P03,T3,55,1,menu,0
+P04,T1,134,1,livre,1
+P04,T2,133,1,menu,0
+P04,T3,63,1,menu,1
+P05,T1,102,1,livre,1
+P05,T2,180,0,livre,1
+P05,T3,55,1,menu,0
