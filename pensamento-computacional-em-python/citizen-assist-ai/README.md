@@ -90,20 +90,6 @@ Cada atendimento vira um dicionário em `data/historico.json` com: `data`, `orig
 
 Indicadores exibidos (opção 3 e ao sair): resposta encontrada (%), taxa de acerto: ajudou (%), tempo médio para encontrar, tentativas por atendimento, facilidade de uso (média das notas por sessão) e lista de dúvidas sem solução (com a contagem). O CSV é gerado com `csv.DictWriter` em `data/atendimentos.csv` (UTF-8 com BOM, para o Excel abrir os acentos).
 
-## Além do que foi pedido (extras)
-
-Nenhum extra substitui a busca por pontuação, que continua sendo o núcleo.
-
-| Extra | Onde | O que faz |
-|---|---|---|
-| Verificador de link | opção 5, `analisar_link()` | Avisa se o endereço termina em `.gov.br`, imita o governo, usa link encurtado, o truque do `@` ou punycode. O link não é guardado. |
-| "Você quis dizer?" | `BaseConhecimento.corrigir()` | Corrige erros de digitação com `difflib` usando as palavras da própria base. |
-| Modo emergência | `_avisar_emergencia()` | Palavras como "socorro" ou "desabando" mostram os telefones 193, 192 e 199 antes de qualquer busca. |
-| Alerta de informação velha | `Orientacao.exibir()` | Se a verificação tem mais de 90 dias, avisa para confirmar na fonte. |
-| Modo didático | opção 6 | Mostra a normalização e a soma dos pontos passo a passo (útil no vídeo). |
-| Validador da base | `python main.py --validar` | Confere mínimo de 10 orientações, 3 categorias, 3 palavras-chave, fonte e data. |
-| Testes automatizados | `tests/` | 28 testes, incluindo JSON corrompido, dado pessoal e sessão completa. |
-
 
 
 ## Fontes consultadas
