@@ -1,0 +1,156 @@
+[
+  {
+    "id": 1,
+    "categoria": "Emergência",
+    "titulo": "Chamar a Defesa Civil em uma emergência (199)",
+    "palavras_chave": ["defesa civil", "199", "telefone da defesa civil", "acionar defesa civil", "ligar para a defesa civil", "emergencia"],
+    "resposta": "Ligue 199 para falar com a Defesa Civil. Ela atende alagamento, enxurrada, risco de desabamento e deslizamento. Em algumas cidades o 199 ainda não existe: se for o seu caso, procure o telefone da Defesa Civil do seu município.",
+    "documentos": ["Nenhum documento é necessário para pedir ajuda"],
+    "onde": "Telefone 199 (ou o número da Defesa Civil do seu município)",
+    "fonte": "https://www.gov.br/mma/pt-br/centrais-de-conteudo/publicacoes/educacao-ambiental/protocolo-inundacoes.pdf",
+    "verificado_em": "2026-11-17"
+  },
+  {
+    "id": 2,
+    "categoria": "Emergência",
+    "titulo": "Chamar os Bombeiros (193) ou o SAMU (192)",
+    "palavras_chave": ["bombeiros", "193", "samu", "192", "resgate", "salvamento", "ambulancia", "urgencia medica", "ferido"],
+    "resposta": "Ligue 193 para o Corpo de Bombeiros (incêndio, salvamento e acidente com vítima) ou 192 para o SAMU (urgência médica). A Defesa Civil (199) avalia riscos e coordena a resposta ao desastre.",
+    "documentos": ["Nenhum documento é necessário para pedir ajuda"],
+    "onde": "Telefones 193 (Bombeiros) e 192 (SAMU)",
+    "fonte": "https://www.gov.br/mma/pt-br/centrais-de-conteudo/publicacoes/educacao-ambiental/protocolo-inundacoes.pdf",
+    "verificado_em": "2026-11-17"
+  },
+  {
+    "id": 3,
+    "categoria": "Emergência",
+    "titulo": "O que fazer durante uma enchente ou alagamento",
+    "palavras_chave": ["enchente", "enchentes", "alagamento", "alagamentos", "inundacao", "enxurrada", "chuva forte", "agua subindo", "rua alagada"],
+    "resposta": "Priorize salvar vidas: bens materiais podem ser substituídos depois. Não atravesse ruas alagadas e não deixe crianças brincando na enxurrada ou perto de córregos. Não se abrigue nem estacione o carro debaixo de árvores. Se você mora em área vulnerável, procure um abrigo seguro ao menor sinal de enchente. Se precisar de ajuda, ligue 199 (Defesa Civil) ou 193 (Bombeiros).",
+    "documentos": ["Nenhum documento é necessário para se proteger"],
+    "onde": "No local seguro mais próximo. Peça ajuda pelos telefones 199 ou 193",
+    "fonte": "https://prefeitura.pbh.gov.br/sites/default/files/estrutura-de-governo/comunicacao/2026/urbel_olhachuva.pdf",
+    "verificado_em": "2026-11-17"
+  },
+  {
+    "id": 4,
+    "categoria": "Alertas e prevenção",
+    "titulo": "Receber alertas da Defesa Civil no celular por SMS (40199)",
+    "palavras_chave": ["alerta", "alertas", "sms", "40199", "receber alerta", "aviso da defesa civil", "cadastrar cep", "cep"],
+    "resposta": "Envie um SMS com o CEP do local para o número 40199. O serviço é gratuito. Você recebe uma mensagem de confirmação e passa a receber os alertas daquela região. Dá para cadastrar mais de um CEP. Para cancelar, envie SAIR e o CEP para o mesmo número. Existe também o Defesa Civil Alerta, que avisa por cell broadcast, sem cadastro, celulares 4G ou 5G em áreas de risco. Mesmo assim, o cadastro por SMS continua recomendado. Atenção: envie o CEP só por SMS, não digite aqui.",
+    "documentos": ["Um celular", "CEP do local que você quer acompanhar"],
+    "onde": "SMS para o número 40199 (gratuito)",
+    "fonte": "https://www.gov.br/pt-br/servicos/solicitar-cadastro-para-recebimento-de-avisos-e-alertas-de-desastres",
+    "verificado_em": "2026-11-17"
+  },
+  {
+    "id": 5,
+    "categoria": "Alertas e prevenção",
+    "titulo": "Sinais de que pode haver deslizamento de terra",
+    "palavras_chave": ["deslizamento", "deslizamentos", "encosta", "morro", "barranco", "trinca", "trincas", "rachadura", "rachaduras", "terreno cedendo"],
+    "resposta": "Fique atento a rachaduras ou trincas em paredes, pisos e no terreno, a estalos e barulhos diferentes, a portas e janelas que passam a não abrir direito e a árvores, postes ou cercas inclinados. Se notar algum sinal, saia de casa na hora e avise a Defesa Civil, o Corpo de Bombeiros e os vizinhos. Só volte quando a Defesa Civil liberar.",
+    "documentos": ["Nenhum documento é necessário para sair e se proteger"],
+    "onde": "Local seguro fora da área de risco. Telefones 199 (Defesa Civil) e 193 (Bombeiros)",
+    "fonte": "https://www.gov.br/mdr/pt-br",
+    "verificado_em": "2026-11-17"
+  },
+  {
+    "id": 6,
+    "categoria": "Alertas e prevenção",
+    "titulo": "Pedir vistoria da sua casa ou terreno em área de risco",
+    "palavras_chave": ["vistoria", "vistoriar", "area de risco", "minha casa", "risco de desabamento", "desabamento", "casa rachada", "imovel"],
+    "resposta": "Se sua casa tiver trincas ou outras mudanças na estrutura, ligue para o Corpo de Bombeiros (193) e para a Defesa Civil do seu município (199). A Defesa Civil faz a vistoria no local com risco de desabamento e orienta o que fazer.",
+    "documentos": ["Informe o endereço do imóvel à Defesa Civil (por telefone, não aqui)"],
+    "onde": "Defesa Civil do seu município (199) e Corpo de Bombeiros (193)",
+    "fonte": "https://www.agenciaminas.mg.gov.br/news/pdf/128794.pdf",
+    "verificado_em": "2026-11-17"
+  },
+  {
+    "id": 7,
+    "categoria": "Ajuda e direitos",
+    "titulo": "Encontrar abrigo e atendimento da assistência social",
+    "palavras_chave": ["abrigo", "abrigos", "desabrigado", "desalojado", "perdi minha casa", "assistencia social", "cras", "onde dormir"],
+    "resposta": "Se você precisou sair de casa por causa de chuva ou risco, procure a Defesa Civil (199) ou a assistência social da sua prefeitura para saber qual abrigo está aberto. Mesmo quem está na casa de parentes pode se cadastrar na assistência social da prefeitura (por exemplo, no CRAS) para ser acompanhado e receber ajuda. Os locais mudam de cidade para cidade.",
+    "documentos": ["Varia por cidade: pergunte na prefeitura ou na Defesa Civil"],
+    "onde": "Defesa Civil (199), CRAS ou Secretaria de Assistência Social da sua prefeitura",
+    "fonte": "https://www.gov.br/mdr/pt-br",
+    "verificado_em": "2026-11-17"
+  },
+  {
+    "id": 8,
+    "categoria": "Ajuda e direitos",
+    "titulo": "Auxílio Reconstrução: ajuda federal para famílias atingidas",
+    "palavras_chave": ["auxilio reconstrucao", "auxilio", "reconstrucao", "ajuda financeira", "ajuda do governo", "familia desalojada"],
+    "resposta": "O Auxílio Reconstrução é uma ajuda do governo federal para famílias desalojadas ou desabrigadas em municípios com reconhecimento federal de emergência ou calamidade. A prefeitura cadastra a família. Depois, a pessoa responsável confirma os dados no sistema oficial do benefício, entrando com a conta gov.br, e o pagamento é feito pela Caixa. Valores e regras mudam conforme o desastre: confirme sempre no site oficial e na prefeitura.",
+    "documentos": ["Conta gov.br da pessoa responsável pela família", "Dados da família informados à prefeitura no cadastro"],
+    "onde": "Prefeitura (cadastro) e site oficial do Auxílio Reconstrução (confirmação com gov.br)",
+    "fonte": "https://auxilioreconstrucao.dataprev.gov.br/reconstrucao/cidadao/",
+    "verificado_em": "2026-11-17"
+  },
+  {
+    "id": 9,
+    "categoria": "Ajuda e direitos",
+    "titulo": "Saque calamidade do FGTS",
+    "palavras_chave": ["fgts", "saque calamidade", "saque do fgts", "calamidade", "calamidade publica", "sacar fgts", "fundo de garantia"],
+    "resposta": "Quem mora em cidade com emergência ou calamidade pública reconhecida pode pedir o saque calamidade do FGTS, de até R$ 6.220 por conta, respeitando o saldo. O saque só abre depois que a Caixa habilita o município, e cada cidade tem seu prazo. É preciso ter saldo e não ter sacado por esse motivo nos últimos 12 meses. O pedido é feito no aplicativo FGTS ou em uma agência da Caixa. Regras e valores podem mudar: confira no aplicativo.",
+    "documentos": ["Documento de identidade com foto", "Comprovante de residência emitido até 120 dias antes da decretação da calamidade", "Se o comprovante estiver no nome do cônjuge, documento que prove o vínculo"],
+    "onde": "Aplicativo FGTS ou agência da Caixa Econômica Federal",
+    "fonte": "https://www.caixa.gov.br",
+    "verificado_em": "2026-11-17"
+  },
+  {
+    "id": 10,
+    "categoria": "Ajuda e direitos",
+    "titulo": "Recuperar documentos perdidos em enchente ou desastre",
+    "palavras_chave": ["documentos", "segunda via", "perdi meus documentos", "perdi documentos", "rg", "cnh", "certidao"],
+    "resposta": "Peça a segunda via no órgão que emite cada documento. As certidões de nascimento, casamento e óbito são pedidas em cartório. Em desastres, vários estados e cidades isentam a taxa da segunda via, mas isso depende do decreto de emergência ou calamidade e da regra local: pergunte na prefeitura ou na Defesa Civil. Alguns órgãos pedem uma declaração de que você foi atingido pela enchente. Se você tem conta gov.br, o aplicativo gov.br guarda versões digitais de alguns documentos, como o CPF digital.",
+    "documentos": ["Varia conforme o documento: alguns órgãos pedem declaração de que você foi atingido pela enchente"],
+    "onde": "Órgão emissor de cada documento, cartório, Poupatempo ou similar do seu estado, e aplicativo gov.br",
+    "fonte": "https://www.gov.br/pt-br/servicos",
+    "verificado_em": "2026-11-17"
+  },
+  {
+    "id": 11,
+    "categoria": "Saúde",
+    "titulo": "Cuidados com a saúde depois de uma enchente",
+    "palavras_chave": ["leptospirose", "doenca", "doencas", "agua contaminada", "tetano", "dengue", "cobra", "escorpiao", "animais peconhentos", "diarreia"],
+    "resposta": "Depois de uma enchente há risco de leptospirose, tétano, hepatite A, diarreia e dengue, além de acidentes com animais peçonhentos, como escorpiões, aranhas e cobras, que aparecem em entulhos. Tenha cuidado com a água, os alimentos e a higiene. Fique atento a diarreia, febre, dor de cabeça, náuseas, vômitos e dor na barriga. Se tiver três ou mais episódios de diarreia em 24 horas, procure atendimento médico.",
+    "documentos": ["Nenhum para esta orientação. A unidade de saúde informa o que precisa no atendimento"],
+    "onde": "Unidade de saúde mais próxima (UBS ou pronto atendimento). Em caso grave, SAMU (192)",
+    "fonte": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/e/enchentes",
+    "verificado_em": "2026-11-17"
+  },
+  {
+    "id": 12,
+    "categoria": "Saúde",
+    "titulo": "Cuidar da saúde mental depois de um desastre",
+    "palavras_chave": ["saude mental", "ansiedade", "trauma", "estresse", "medo", "apoio psicologico", "psicologo", "triste"],
+    "resposta": "Um desastre pode causar muito sofrimento e, em alguns casos, evoluir para estresse pós-traumático. Se possível, mantenha contato com familiares e amigos, converse sobre o que sente e procure apoio psicológico se precisar. Reconhecer os sinais e buscar ajuda profissional ajuda na prevenção e no tratamento. Se você estiver sem esperança ou pensando em se machucar, ligue para o CVV no 188 (gratuito, 24 horas).",
+    "documentos": ["Nenhum para esta orientação"],
+    "onde": "Unidade de saúde da sua região. Apoio emocional pelo CVV: telefone 188",
+    "fonte": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/e/enchentes",
+    "verificado_em": "2026-11-17"
+  },
+  {
+    "id": 13,
+    "categoria": "Golpes e segurança",
+    "titulo": "Golpe do falso auxílio e links suspeitos",
+    "palavras_chave": ["golpe", "golpes", "link falso", "site falso", "mensagem falsa", "whatsapp", "fake", "link suspeito"],
+    "resposta": "Em outubro de 2026 o Ministério da Integração alertou para uma publicação falsa sobre um novo Auxílio Reconstrução, que pedia para consultar o direito por um link. Não acesse endereços suspeitos e não informe dados pessoais em páginas desconhecidas. Mensagens de conhecidos também podem ser falsas, porque circulam sem verificação. Informações oficiais do Auxílio Reconstrução ficam só no site do benefício. Use a opção 5 do menu para checar se um link termina em .gov.br.",
+    "documentos": ["Nenhum. Nunca informe CPF ou senha em páginas que você não conhece"],
+    "onde": "Canais oficiais: sites que terminam em .gov.br e o aplicativo gov.br",
+    "fonte": "https://www.gov.br/mdr/pt-br/noticias/midr-alerta-para-golpe-envolvendo-o-auxilio-reconstrucao",
+    "verificado_em": "2026-11-17"
+  },
+  {
+    "id": 14,
+    "categoria": "Golpes e segurança",
+    "titulo": "Doações para vítimas: como evitar o golpe do Pix",
+    "palavras_chave": ["doacao", "doacoes", "doar", "pix", "golpe do pix", "vaquinha", "ajudar vitimas"],
+    "resposta": "Depois de desastres surgem golpes pedindo Pix para ajudar as vítimas. Antes de enviar dinheiro ou doações, confirme com a Defesa Civil ou com a prefeitura onde e como doar. Se achar que foi vítima de golpe, registre ocorrência na delegacia mais próxima ou na delegacia online do seu estado.",
+    "documentos": ["Varia por delegacia: pergunte o que levar ao registrar a ocorrência"],
+    "onde": "Delegacia de Polícia mais próxima ou delegacia online do seu estado",
+    "fonte": "https://www.estado.rs.gov.br/defesa-civil-alerta-contra-golpes-relacionados-a-doacoes-para-vitimas-dos-ciclones",
+    "verificado_em": "2026-11-17"
+  }
+]
