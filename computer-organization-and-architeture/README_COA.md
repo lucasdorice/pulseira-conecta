@@ -13,7 +13,7 @@ Ciência da Computação · FIAP
 
 **Links de entrega**
 - Projeto Wokwi: `https://wokwi.com/projects/480528004037520385`
-- Vídeo (YouTube, não listado): https://youtu.be/8uLVGfoYNRM
+- Vídeo (YouTube, não listado): https://youtu.be/1F-PuF_5Qr4
 
 ---
 
