@@ -1,4 +1,4 @@
-# Pulseira NFC Cidadã · Mobilidade Urbana Inteligente
+# Pulseira CONECTA· Mobilidade Urbana Inteligente
 
 **Global Solution FIAP 2026 · Tema CitizenTech**
 Disciplina: Modelagem Matemática e Computacional · Curso: Ciência da Computação
