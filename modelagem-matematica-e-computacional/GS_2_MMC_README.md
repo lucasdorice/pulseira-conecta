@@ -9,7 +9,7 @@ Disciplina: Modelagem Matemática e Computacional · Curso: Ciência da Computa�
 | Leandro Cavaccini Brito | 570556 |
 | Lucas Dorice dos Santos | 568692 |
 
-> O nome do projeto é provisório (**[A DEFINIR]** pelo grupo).
+
 
 ---
 
@@ -89,7 +89,7 @@ Cada coluna soma 1 (total preservado) e todos os coeficientes são ≥ 0 (nenhum
 .
 ├── global_solution_mobilidade_urbana.ipynb   # entrega principal (modelo, código, demonstrações)
 ├── README.md                                 # este arquivo
-└── CHECKLIST.md                              # controle de conformidade com o enunciado
+
 ```
 
 ## 4. Como executar
